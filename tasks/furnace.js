@@ -5,7 +5,7 @@ module.exports = function(grunt){
 
     var filters = {
     
-        'text>amd': function(src, dest){
+        'tpl>amd': function(src, dest){
             var text = grunt.file.read(src, { encoding: 'utf-8' });
             var json = {
                 'template': text.toString()

@@ -2,7 +2,7 @@
   "name": "grunt-furnace",
   "title": "grunt-furnace",
   "description": "grunt tasks for transforming code from one format to another",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/dexteryy/grunt-furnace",
   "author": {
     "name": "dexteryy",
@@ -15,7 +15,6 @@
       "url": "https://github.com/gruntjs/grunt-contrib-requirejs/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "grunt.js",
   "engines": {
     "node": "*"
   },

@@ -21,7 +21,7 @@ Support:
 furnace: {
     tplExample1: {
         options: {
-            importas: 'text',
+            importas: 'tpl',
             exportas: 'amd',
         },
         src: 'tpl/**/*.tpl',
@@ -29,7 +29,7 @@ furnace: {
     },
     tplExample2: {
         options: {
-            importas: 'text',
+            importas: 'tpl',
             exportas: 'amd',
         },
         files: [{
