@@ -1,0 +1,7 @@
+(function(){
+
+
+    module.exports = {"template":""}; 
+
+
+})();

@@ -5,21 +5,21 @@ title: grunt-furnace
 
 # grunt-furnace
 
-Grunt tasks for transforming code from one format to another
+> * Grunt tasks for transforming code from one format to another
 
-Support: 
+## Support 
 
-* template > AMD
-* AMD > CJS _(comming soon...)_
-* CJS > AMD _(comming soon...)_
-* module pattern > AMD _(comming soon...)_
+* [TPL]() > [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) - Use JS template file as AMD module no matter what syntax 
+* TPL > [CJS](http://wiki.commonjs.org/wiki/Modules/1.1) - Use JS template file as CommonJS module no matter what syntax
+* AMD > CJS - Make available AMD module in NodeJS or publish AMD module through NPM
+* CJS > AMD - Use [Component](https://github.com/component/component/wiki/Components)-based module in your OzJS-based or RequireJS-based project 
 * AMD > module pattern _(comming soon...)_
 
 ## Config Example
 
 ``` javascript
 furnace: {
-    tplExample1: {
+    tplExample: {
         options: {
             importas: 'tpl',
             exportas: 'amd',
@@ -27,21 +27,23 @@ furnace: {
         src: 'tpl/**/*.tpl',
         dest: 'js/app/tpl/'
     },
-    tplExample2: {
+    npmExample: {
         options: {
-            importas: 'tpl',
-            exportas: 'amd',
+            importas: 'amd',
+            exportas: 'cjs',
         },
         files: [{
-            expand: true,     // Enable dynamic expansion.
-            cwd: 'tpl/',
-            src: ['**/*.tpl'], // Actual pattern(s) to match.
-            dest: 'js/app/',   // Destination path prefix.
-            ext: '.tpl.js'
+            expand: true,
+            cwd: './',
+            src: ['**/*.js', '!<%= meta.npmPublishDir %>/**', '!node_modules/**', 'Gruntfile.js'],
+            dest: '<%= meta.npmPublishDir %>/',
+            ext: '.js'
         }]
     }
 },
 ```
+
+See [Gruntfile.js](https://github.com/dexteryy/grunt-furnace/blob/master/Gruntfile.js) and [tests/](https://github.com/dexteryy/grunt-furnace/blob/master/tests) for more examples.
 
 ## Source code
 
@@ -49,7 +51,7 @@ furnace: {
 
 ## More References
 
-See [OzJS References](http://ozjs.org/#ref)
+See [OzJS Project Homepage](http://ozjs.org/)
 
 ## Release History
 
