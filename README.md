@@ -13,7 +13,7 @@ title: grunt-furnace
 * TPL > [CJS](http://wiki.commonjs.org/wiki/Modules/1.1) - Use JS template file as CommonJS module no matter what syntax
 * AMD > CJS - Make available AMD module in NodeJS or publish AMD module through NPM
 * CJS > AMD - Use [Component](https://github.com/component/component/wiki/Components)-based module in your OzJS-based or RequireJS-based project 
-* AMD > module pattern _(comming soon...)_
+* AMD > module pattern _(coming soon...)_
 
 ## Config Example
 
