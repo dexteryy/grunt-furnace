@@ -58,17 +58,20 @@ module.exports = function(grunt){
 
     grunt.registerMultiTask('furnace', 'transform code from one format to another', function(){
         var opt = this.options();
+        var count = 0;
         this.files.forEach(function(file){
             file.src.forEach(function(src){
                 var fn = filters[opt.importas.toLowerCase() + '>' + opt.exportas.toLowerCase()];
                 if (fn) {
                     var dest = fn(src, file.dest);
-                    grunt.log.writeln( "File '" + dest + "' created." );
+                    grunt.verbose.writeln( "File '" + dest + "' created." );
+                    count++;
                 } else {
                     grunt.log.error('unsupported format: ' + opt.importas + ' > ' + opt.exportas);
                 }
             });
         });
+        grunt.log.writeln('Created ' + count.toString().cyan + ' files');
     });
 
 };
